@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2017-2019 The LineageOS Project
+# Copyright (C) 2018 The PixelExperience Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,8 +20,8 @@ VENDOR=google
 
 # Load extractutils and do some sanity checks
 MY_DIR=$PWD
-LINEAGE_ROOT=$MY_DIR/../../..
-HELPER=$LINEAGE_ROOT/vendor/lineage/build/tools/extract_utils.sh
+AOSP_ROOT=$MY_DIR/../../..
+HELPER=$AOSP_ROOT/vendor/aosp/build/tools/extract_utils.sh
 DEVICE=$1
 [ -n "$2" ] && SRC=$2 || SRC=adb
 
@@ -41,13 +42,13 @@ if [ $# -lt 1 ] || [ $# -gt 2 ]; then
 fi
 
 # Initialize the helper
-setup_vendor $DEVICE $VENDOR $LINEAGE_ROOT
+setup_vendor $DEVICE $VENDOR $AOSP_ROOT
 
 extract $MY_DIR/device-proprietary-files.txt $SRC
 extract $MY_DIR/$DEVICE/device-proprietary-files-vendor.txt $SRC
 
 # Patch lib to remove dependency on perfd
 patchelf --remove-needed libqti-perfd-client.so \
-    $LINEAGE_ROOT/vendor/$VENDOR/$DEVICE/proprietary/vendor/lib/libmmcamera_imglib.so
+    $AOSP_ROOT/vendor/$VENDOR/$DEVICE/proprietary/vendor/lib/libmmcamera_imglib.so
 
 $MY_DIR/setup-makefiles.sh $DEVICE

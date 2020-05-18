@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/services/vr/virtual_touchpad/idc/vr-virtual-touchpad-0.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/vr-virtual-touchpad-0.idc \
     frameworks/native/services/vr/virtual_touchpad/idc/vr-virtual-touchpad-1.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/vr-virtual-touchpad-1.idc \
 
-# copy customized media_profiles and media_codecs xmls for msm8996
+# Copy customized media_profiles and media_codecs xmls for msm8996
 PRODUCT_COPY_FILES += \
     device/google/marlin/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     device/google/marlin/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
@@ -65,11 +65,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, device/google/marlin/common/common64.mk)
 
-#Android EGL implementation
+# Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 PRODUCT_PACKAGES += SSRestartDetector
 
-# graphics
+# Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
 
@@ -192,7 +192,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
-# set audio fluence, ns, aec property
+# Set audio fluence, ns, aec property
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluencepro \
     persist.audio.fluence.voicecall=true \
@@ -239,7 +239,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-#ANT+ stack
+# ANT+ stack
 PRODUCT_PACKAGES += \
     AntHalService \
     libantradio \
@@ -263,7 +263,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml \
     frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.headtracking.xml \
 
-# new gatekeeper HAL
+# New gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
@@ -282,7 +282,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     nanoapp_cmd
 
-# sensor utilities (only for userdebug and eng builds)
+# Sensor utilities (only for userdebug and eng builds)
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     nanotool \
@@ -292,7 +292,7 @@ endif
 PRODUCT_COPY_FILES += \
     device/google/marlin/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-#FEATURE_OPENGLES_EXTENSION_PACK support string config file
+# FEATURE_OPENGLES_EXTENSION_PACK support string config file
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 
@@ -300,7 +300,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/marlin/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
-# init scripts
+# Init scripts
 PRODUCT_COPY_FILES += \
     device/google/marlin/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.rc \
     device/google/marlin/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.usb.rc \
@@ -465,11 +465,11 @@ PRODUCT_PACKAGES += \
     Tag \
     android.hardware.nfc@1.1-service \
 
-#Secure Element Service
+# Secure Element Service
 PRODUCT_PACKAGES += \
     SecureElement \
 
-#GNSS HAL
+# GNSS HAL
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl:64
 
@@ -572,7 +572,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-#Reduce cost of scrypt for FBE CE decryption
+# Reduce cost of scrypt for FBE CE decryption
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.scrypt_params=13:3:1
 
@@ -603,7 +603,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/google/marlin/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
-# whitelisted app
+# Whitelisted apps
 PRODUCT_COPY_FILES += \
     device/google/marlin/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
@@ -622,11 +622,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.traced.enable=1
 
-# health HAL
+# Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service.marlin
 
-# default atrace HAL
+# Default atrace HAL
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 

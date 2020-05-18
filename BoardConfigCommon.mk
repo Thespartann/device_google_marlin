@@ -22,7 +22,7 @@ TARGET_RECOVERY_FSTAB := device/google/marlin/fstab.common
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOOTLOADER_GCC_VERSION := arm-eabi-4.8
-# use msm8996 LK configuration
+# Use msm8996 LK configuration
 BOOTLOADER_PLATFORM := msm8996
 
 TARGET_USES_OVERLAY := true
@@ -135,20 +135,20 @@ TARGET_NO_RPC := true
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
-#Let charger mode enter suspend
+# Let charger mode enter suspend
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-#Enable Peripheral Manager
+# Enable Peripheral Manager
 TARGET_PER_MGR_ENABLED := true
 
-#Enable HW based full disk encryption
+# Enable HW based full disk encryption
 # TODO: disable due to compile error due to mismatch with system/vold
 # TARGET_HW_DISK_ENCRYPTION := true
 
-#Enable SW based full disk encryption
+# Enable SW based full disk encryption
 TARGET_SWV8_DISK_ENCRYPTION := false
 
-#Enable PD locater/notifier
+# Enable PD locater/notifier
 TARGET_PD_SERVICE_ENABLED := true
 
 BOARD_QTI_CAMERA_32BIT_ONLY := true
@@ -157,20 +157,20 @@ TARGET_BOOTIMG_SIGNED := true
 # HTC_SENSOR_HUB
 LIBHTC_SENSORHUB_PROJECT := g_project
 
-#Enable/Disable Camera daemon
+# Enable/Disable Camera daemon
 CAMERA_DAEMON_NOT_PRESENT := true
 
-#TARGET_LDPRELOAD := libNimsWrap.so
+# TARGET_LDPRELOAD := libNimsWrap.so
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := false
 
-#Add NON-HLOS files for ota upgrade
+# Add NON-HLOS files for ota upgrade
 ADD_RADIO_FILES := true
 
 TARGET_RECOVERY_UI_LIB := librecovery_ui_nanohub libbootloader_message libfstab
 
-#Add support for firmare upgrade on 8996
+# Add support for firmare upgrade on 8996
 HAVE_SYNAPTICS_DSX_FW_UPGRADE := true
 
 # Enable MDTP (Mobile Device Theft Protection)
@@ -185,7 +185,7 @@ BOARD_USES_SYSTEM_OTHER_ODEX := true
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
 
-#NFC
+# NFC
 NXP_CHIP_TYPE := 3
 
 # Testing related defines

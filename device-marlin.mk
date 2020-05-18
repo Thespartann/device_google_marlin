@@ -27,7 +27,7 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/google/marlin/marlin/overlay
 
-# display
+# Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=560
 

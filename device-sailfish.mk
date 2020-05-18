@@ -22,7 +22,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
--include device/google/marlin/device-common.mk
+include device/google/marlin/device-common.mk
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/google/marlin/sailfish/overlay
